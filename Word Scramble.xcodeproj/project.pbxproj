@@ -13,6 +13,7 @@
 		E21F793D2471E4CC0076650A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21F793C2471E4CC0076650A /* Assets.xcassets */; };
 		E21F79402471E4CC0076650A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21F793F2471E4CC0076650A /* Preview Assets.xcassets */; };
 		E21F79432471E4CC0076650A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21F79412471E4CC0076650A /* LaunchScreen.storyboard */; };
+		E21F794B2471EA410076650A /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = E21F794A2471EA400076650A /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E21F793F2471E4CC0076650A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E21F79422471E4CC0076650A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E21F79442471E4CC0076650A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E21F794A2471EA400076650A /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				E21F793C2471E4CC0076650A /* Assets.xcassets */,
 				E21F79412471E4CC0076650A /* LaunchScreen.storyboard */,
 				E21F79442471E4CC0076650A /* Info.plist */,
+				E21F794A2471EA400076650A /* start.txt */,
 				E21F793E2471E4CC0076650A /* Preview Content */,
 			);
 			path = "Word Scramble";
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E21F79432471E4CC0076650A /* LaunchScreen.storyboard in Resources */,
+				E21F794B2471EA410076650A /* start.txt in Resources */,
 				E21F79402471E4CC0076650A /* Preview Assets.xcassets in Resources */,
 				E21F793D2471E4CC0076650A /* Assets.xcassets in Resources */,
 			);
