@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showError = false
     
+    @State private var totalCount = 0
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -39,12 +41,15 @@ struct ContentView: View {
                 )
                     .navigationBarTitle(rootWord)
                     .navigationBarItems(leading:
-                        Button(action: startGame) {
-                            Text("Restart")
-                                .foregroundColor(.black)
-                                .padding(10)
-                                .border(Color.black, width: 5)
-                    })
+                        HStack(spacing: 150){
+                            Button(action: startGame) {
+                                Text("Restart")
+                                    .foregroundColor(.black)
+                                    .padding(10)
+                                    .border(Color.black, width: 5)
+                            }
+                            Text("Total Score: \(totalCount)")
+                        })
                     .onAppear(perform: startGame)
                     .alert(isPresented: $showError) {
                         Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("Ok")))
@@ -75,11 +80,16 @@ struct ContentView: View {
             return 
         }
         
+        totalCount += newWord.count
         usedWords.insert(answer, at: 0)
         newWord = ""
     }
     
     func startGame() {
+        
+        totalCount = 0
+        usedWords = [String]()
+        
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
