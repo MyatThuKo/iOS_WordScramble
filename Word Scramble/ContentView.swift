@@ -87,6 +87,7 @@ struct ContentView: View {
     
     func startGame() {
         
+        newWord = ""
         totalCount = 0
         usedWords = [String]()
         
