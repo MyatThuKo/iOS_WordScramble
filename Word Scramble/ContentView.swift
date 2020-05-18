@@ -8,6 +8,16 @@
 
 import SwiftUI
 
+struct ScoreText: View {
+    
+    var text: String
+    var body: some View {
+        Text(text)
+            .foregroundColor(.black)
+            .font(.system(size: 30))
+    }
+}
+
 struct ContentView: View {
     
     @State private var usedWords = [String]()
@@ -37,18 +47,20 @@ struct ContentView: View {
                                 Text($0)
                             }
                         .padding(10)
+                            ScoreText(text: "Total Score: \(totalCount)")
+                            Spacer()
                         }
                 )
                     .navigationBarTitle(rootWord)
                     .navigationBarItems(leading:
-                        HStack(spacing: 150){
+                        HStack(spacing: 125){
                             Button(action: startGame) {
                                 Text("Restart")
                                     .foregroundColor(.black)
                                     .padding(10)
                                     .border(Color.black, width: 5)
                             }
-                            Text("Total Score: \(totalCount)")
+                            ScoreText(text: "Total Score: \(totalCount)")
                         })
                     .onAppear(perform: startGame)
                     .alert(isPresented: $showError) {
