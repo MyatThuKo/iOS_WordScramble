@@ -86,7 +86,13 @@ struct ContentView: View {
     }
     
     func isOriginal(word: String) -> Bool {
-        !usedWords.contains(word)
+        var original = true
+        
+        if (usedWords.contains(word) || word == rootWord) {
+            original = false
+        }
+        
+        return original
     }
     
     func isPossible(word: String) -> Bool {
@@ -107,7 +113,17 @@ struct ContentView: View {
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
-        return misspelledRange.location == NSNotFound
+        var isValid = true
+        var isLessThan3 = false
+        if word.count < 2 {
+            isLessThan3 = true
+        }
+        
+        if (misspelledRange.location != NSNotFound || isLessThan3 == true) {
+            isValid = false
+        }
+        
+        return isValid
     }
     
     func wordError(title: String, message: String) {
