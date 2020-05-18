@@ -38,6 +38,13 @@ struct ContentView: View {
                         }
                 )
                     .navigationBarTitle(rootWord)
+                    .navigationBarItems(leading:
+                        Button(action: startGame) {
+                            Text("Restart")
+                                .foregroundColor(.black)
+                                .padding(10)
+                                .border(Color.black, width: 5)
+                    })
                     .onAppear(perform: startGame)
                     .alert(isPresented: $showError) {
                         Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("Ok")))
